@@ -14,22 +14,6 @@ typedef struct Graph {
     edge_t** edges;
 } graph_t;
 
-graph_t* createGraph(int nodeC, int edgeC) {
-    if (nodeC == 0) {
-        return NULL;
-    }
-    edge_t** edgesArray = malloc(sizeof(edge_t) * edgeC);
-    if (edgesArray == NULL) {
-        return NULL;
-    } 
-    graph_t* graph = malloc(sizeof(graph_t));
-    if (graph == NULL) {
-        return NULL;
-    }
-    graph->edgeCount = edgeC;
-    graph->nodeCount = nodeC;
-    graph->edges = edgesArray;
-}
-
-edge_t* spanningSubTree (graph_t* graph);
+graph_t* createGraph(int nodeC, int edgeC);
+edge_t** spanningSubTree (graph_t* graph);
 void freeGraph (graph_t* graph);
