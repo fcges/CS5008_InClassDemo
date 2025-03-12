@@ -4,6 +4,10 @@
 
 int main() {
     graph_t* graph = createGraph(5, 7);
+    if (graph == NULL) {
+        printf("Fail to create graph!");
+        return 1;
+    }
     //edge AB
     graph->edges[0]->start = 0;
     graph->edges[0]->des = 1;
@@ -34,6 +38,10 @@ int main() {
     graph->edges[6]->weight = 12;
     
     edge_t** subTree = spanningSubTree(graph);
+    if (subTree == NULL) {
+        printf("Fail to generate subTree!");
+        return 1;
+    }
 
     //print result
     printf("Result:\n");
@@ -43,4 +51,5 @@ int main() {
     //free
     free(subTree);
     freeGraph(graph);
+    return 0;
 }
