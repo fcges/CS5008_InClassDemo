@@ -43,9 +43,18 @@ int main() {
         return 1;
     }
 
+    //Check the final length to see if the graph is disconnected or not
+    int subLen = graph->nodeCount - 1;
+    while (subTree[subLen - 1] == NULL) {
+        subLen--;
+    }
+    if (subLen != graph->nodeCount - 1) {
+        printf("The graph is disconnected. Output is a spanning forest.");
+    }
+
     //print result
     printf("Result:\n");
-    for (int i = 0; i < graph->nodeCount - 1; i++) {
+    for (int i = 0; i < subLen; i++) {
         printf("%d -> %d weight: %d\n", (subTree[i]->start), (subTree[i]->des), (subTree[i]->weight));
     }
     //free
