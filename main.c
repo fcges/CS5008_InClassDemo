@@ -49,7 +49,7 @@ int main() {
         subLen--;
     }
     if (subLen != graph->nodeCount - 1) {
-        printf("The graph is disconnected. Output is a spanning forest.");
+        printf("The graph is disconnected. Output is a spanning forest.\n");
     }
 
     //print result
